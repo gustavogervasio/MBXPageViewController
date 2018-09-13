@@ -168,11 +168,9 @@
 
 -  (void)syncScrollView
 {
-    for (UIView* view in _pageController.view.subviews){
-        if([view isKindOfClass:[UIScrollView class]])
-        {
-            _pageScrollView = (UIScrollView *)view;
-            _pageScrollView.delegate = self;
+    for (UIScrollView *view in self.pageController.view.subviews) {
+        if ([view isKindOfClass: [UIScrollView class]]) {
+            view.scrollEnabled = false;
         }
     }
 }
